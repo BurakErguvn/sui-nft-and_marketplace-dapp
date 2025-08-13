@@ -2,6 +2,14 @@
 
 Full-stack NFT minting and marketplace frontend for a Sui Move smart contract collection ("TheSavagePet"). Provides minting, user NFT management, marketplace listing, purchasing, delisting, price updates, and real‑time / historical event tracking.
 
+### On-Chain Smart Contract Repository
+
+The Move smart contracts powering this dApp live here:
+
+https://github.com/BurakErguvn/sui-nft-and-marketplace
+
+Clone / inspect that repository for the on-chain modules, event structs, and deployment instructions. This frontend consumes those published package IDs via environment variables.
+
 ### Key Features
 
 - Wallet connection & network aware config (devnet / testnet / mainnet)

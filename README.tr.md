@@ -2,6 +2,14 @@
 
 Sui Move akıllı sözleşmesiyle çalışan TheSavagePet NFT koleksiyonu için mint ve marketplace arayüzü. Mint, kullanıcı NFT yönetimi, listeleme, satın alma, delist, fiyat güncelleme ile gerçek zamanlı ve geçmiş event takibi sağlar.
 
+### On-Chain Akıllı Sözleşme Deposu
+
+Bu dApp'in kullandığı Move akıllı sözleşmeleri burada:
+
+https://github.com/BurakErguvn/sui-nft-and-marketplace
+
+Zincir üzerindeki modüller, event struct'ları ve deploy talimatları için bu depoyu inceleyin. Bu arayüz ilgili package ID'leri ortam değişkenleri üzerinden kullanır.
+
 ### Öne Çıkanlar
 
 - Cüzdan bağlantısı & ağ farkındalığı (devnet / testnet / mainnet)
