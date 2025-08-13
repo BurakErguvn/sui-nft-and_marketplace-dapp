@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Snake #23",
+    "image_url": "https://walrus.tusky.io/Yg0zPfvNfXZ0K1mB8Fvm2mF7l66AwBx2AfW8BDFRnwY",
+    "attributes": [
+      { "key": "Class", "value": "Pet" },
+      { "key": "Type", "value": "Snake" },
+      { "key": "Rarity", "value": "Common" }
+    ]
+  },
+  {
+    "name": "Fox #98",
+    "image_url": "https://walrus.tusky.io/bSGSZtVDPGa8u2Z-bH2rxjLuiAF5Z3GPzsdA5fz9vYc",
+    "attributes": [
+      { "key": "Class", "value": "Pet" },
+      { "key": "Type", "value": "Fox" },
+      { "key": "Rarity", "value": "Rare" }
+    ]
+  },
+  {
+    "name": "Dragon #331",
+    "image_url": "https://walrus.tusky.io/v9NYw0sJBl6vS-6xaRrV2UFOpJtkV_VcWR2B--U4shQ",
+    "attributes": [
+      { "key": "Class", "value": "Pet" },
+      { "key": "Type", "value": "Dragon" },
+      { "key": "Rarity", "value": "Legendary" }
+    ]
+  },
+  {
+    "name": "Cat #12",
+    "image_url": "https://walrus.tusky.io/0s8mzeVbsXeP_OAqSpBcJnBMpQf7rjz2zpJYQ9AduVs",
+    "attributes": [
+      { "key": "Class", "value": "Pet" },
+      { "key": "Type", "value": "Cat" },
+      { "key": "Rarity", "value": "Common" }
+    ]
+  },
+  {
+    "name": "Dragon #149",
+    "image_url": "https://walrus.tusky.io/6F45STiB_-FXU9D1sH-tH46uADPaYo2eUWslGHRJdJM",
+    "attributes": [
+      { "key": "Class", "value": "Pet" },
+      { "key": "Type", "value": "Dragon" },
+      { "key": "Rarity", "value": "Epic" }
+    ]
+  }
+]

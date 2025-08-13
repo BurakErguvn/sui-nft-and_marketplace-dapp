@@ -1,0 +1,105 @@
+.header {
+  font-family: "Condiment", cursive;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Wallet button override inside header */
+.header button:not(.logo):not(.nav button),
+.nav li:last-child button,
+.nav li:last-child div button,
+.nav li:last-child [class*="connect"],
+.nav li:last-child [class*="wallet"],
+.nav li:last-child [class*="button"] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.header.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.logo {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #ffa500;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Condiment", cursive;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav ul li a:hover {
+  color: #ffa500;
+  text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav ul li a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

@@ -1,0 +1,237 @@
+.eventFeed {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.refreshButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.refreshButton:hover {
+  background: #2980b9;
+}
+
+.refreshButton:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.error {
+  background: #e74c3c;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.noEvents {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 40px;
+  font-style: italic;
+}
+
+.eventList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventItem {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid #bdc3c7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.eventItem:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Event type specific colors */
+.eventItem.mint {
+  border-left-color: #9b59b6;
+}
+
+.eventItem.marketplace_created {
+  border-left-color: #1abc9c;
+}
+
+.eventItem.nft_placed {
+  border-left-color: #3498db;
+}
+
+.eventItem.nft_listed {
+  border-left-color: #f39c12;
+}
+
+.eventItem.nft_delisted {
+  border-left-color: #e74c3c;
+}
+
+.eventItem.nft_sold {
+  border-left-color: #27ae60;
+}
+
+.eventItem.nft_withdrawn {
+  border-left-color: #34495e;
+}
+
+.eventHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.eventIcon {
+  font-size: 1.2rem;
+}
+
+.eventType {
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: capitalize;
+}
+
+.eventTime {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.eventDescription {
+  color: #34495e;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.eventDetails {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.mintDetails,
+.priceDetails,
+.saleDetails {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.price {
+  font-weight: 600;
+  color: #27ae60;
+  background: #d5f6e8;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Event Stats Styles */
+.eventStats {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eventStats h3 {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.statItem {
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .eventFeed {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .eventHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .eventTime {
+    margin-left: 0;
+  }
+
+  .mintDetails,
+  .saleDetails {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

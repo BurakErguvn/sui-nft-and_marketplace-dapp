@@ -1,0 +1,378 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: linear-gradient(
+    135deg,
+    rgba(40, 40, 40, 0.95),
+    rgba(20, 20, 20, 0.95)
+  );
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.nftImage {
+  object-fit: cover;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+.shareSection {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.shareBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.shareBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.nftHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nftTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  word-break: break-word;
+}
+
+.statusBadge {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.nftDescription {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 5px;
+}
+
+.attributesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.attributeItem {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.attributeKey {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.attributeValue {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detailKey {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-family: monospace;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.detailValue:hover {
+  color: #007bff;
+}
+
+.historySection {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.historyLoading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.historyItem {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.eventType {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.eventDate {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.eventPrice {
+  font-size: 0.9rem;
+  color: #28a745;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.eventDetail {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: monospace;
+  margin: 3px 0;
+}
+
+.noHistory {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: 10px;
+  }
+
+  .modalBody {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nftTitle {
+    font-size: 1.5rem;
+  }
+
+  .attributesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .detailItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .shareSection {
+    flex-direction: column;
+  }
+
+  .closeButton {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Custom scrollbar */
+.modalContent::-webkit-scrollbar,
+.historySection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-track,
+.historySection::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.modalContent::-webkit-scrollbar-thumb,
+.historySection::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover,
+.historySection::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

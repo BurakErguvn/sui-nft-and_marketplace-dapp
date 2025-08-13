@@ -1,0 +1,261 @@
+.filterPanel {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.filterTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.filterStats {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.filteredCount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.totalCount {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.clearButton {
+  width: 100%;
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  background: rgba(220, 53, 69, 0.3);
+  transform: translateY(-1px);
+}
+
+.filterSection {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filterSection:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sortOptions {
+  width: 100%;
+}
+
+.sortSelect {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.sortSelect:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sortSelect option {
+  background: #333;
+  color: #fff;
+}
+
+.priceRange {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.priceInputGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priceLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 35px;
+}
+
+.priceInput {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.priceInput:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.priceInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.attributeOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.checkboxLabel:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+
+.checkboxText {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  user-select: none;
+}
+
+.checkboxLabel:has(.checkbox:checked) .checkboxText {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.noAttributes {
+  text-align: center;
+  padding: 30px 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.noAttributes p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Custom scrollbar for attribute options */
+.attributeOptions::-webkit-scrollbar {
+  width: 4px;
+}
+
+.attributeOptions::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.attributeOptions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.attributeOptions::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .filterPanel {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .filterHeader {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .priceRange {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .priceInputGroup {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterPanel {
+    padding: 20px;
+  }
+
+  .filterTitle {
+    font-size: 1.3rem;
+  }
+
+  .priceRange {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .attributeOptions {
+    max-height: 150px;
+  }
+}

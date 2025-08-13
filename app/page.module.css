@@ -1,6 +1,17 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-rgb: 0, 0, 0main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-row-start: 2;
+    align-items: center;
+    text-align: center;
+    font-family: "Condiment", cursive;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    min-height: calc(100vh - 200px);
+  }
+  -alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
   --button-primary-hover: #383838;
@@ -30,8 +41,114 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
   grid-row-start: 2;
+  align-items: center;
+  text-align: center;
+  font-family: "Condiment", cursive;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+  min-height: calc(100vh - 200px);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 107, 107, 0.4),
+    0 0 10px rgba(78, 205, 196, 0.3), 0 0 15px rgba(69, 183, 209, 0.2);
+  transition: all 1s ease-in-out;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+/* Cat tema - Turuncu/Sarı text-shadow */
+.title.cat {
+  color: #ffa500;
+  text-shadow: 0 0 5px rgba(255, 140, 0, 0.5), 0 0 10px rgba(255, 165, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Dragon tema - Koyu kırmızı text-shadow */
+.title.dragon {
+  color: #dc143c;
+  text-shadow: 0 0 5px rgba(139, 0, 0, 0.6), 0 0 10px rgba(220, 20, 60, 0.4),
+    0 0 15px rgba(178, 34, 34, 0.2);
+}
+
+/* Snake tema - Yeşil text-shadow */
+.title.snake {
+  color: #32cd32;
+  text-shadow: 0 0 5px rgba(34, 139, 34, 0.6), 0 0 10px rgba(50, 205, 50, 0.4),
+    0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 1.4;
+  max-width: 500px;
+  margin: 0;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out;
+  text-align: left;
+  flex: 1;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 400px;
+  }
+
+  .main {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    min-height: calc(100vh - 150px);
+    gap: 15px;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .main ol {
@@ -67,10 +184,7 @@
   height: 48px;
   padding: 0 20px;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;

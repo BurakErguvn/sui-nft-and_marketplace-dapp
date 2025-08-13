@@ -1,0 +1,280 @@
+.mintPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000000;
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 5px rgba(255, 107, 107, 0.4),
+    0 0 10px rgba(78, 205, 196, 0.3), 0 0 15px rgba(69, 183, 209, 0.2);
+  transition: all 1s ease-in-out;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+/* Dynamic color themes - matching home page exactly */
+.title.cat {
+  color: #ffa500;
+  text-shadow: 0 0 5px rgba(255, 140, 0, 0.5), 0 0 10px rgba(255, 165, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.title.dragon {
+  color: #dc143c;
+  text-shadow: 0 0 5px rgba(139, 0, 0, 0.6), 0 0 10px rgba(220, 20, 60, 0.4),
+    0 0 15px rgba(178, 34, 34, 0.2);
+}
+
+.title.snake {
+  color: #32cd32;
+  text-shadow: 0 0 5px rgba(34, 139, 34, 0.6), 0 0 10px rgba(50, 205, 50, 0.4),
+    0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.description {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+
+.mintInfo {
+  margin-bottom: 50px;
+}
+
+.currentPet {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.currentPet span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.8s ease-in-out;
+}
+
+.currentPet span.cat {
+  color: #ff6b6b;
+}
+
+.currentPet span.dragon {
+  color: #4ecdc4;
+}
+
+.currentPet span.snake {
+  color: #45b7d1;
+}
+
+.mintButton {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  padding: 20px 50px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 280px;
+  min-height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.mintButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.mintButton:hover::before {
+  left: 100%;
+}
+
+.mintButton.cat {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  color: white;
+}
+
+.mintButton.dragon {
+  background: linear-gradient(135deg, #dc143c, #b91c3c);
+  color: white;
+}
+
+.mintButton.snake {
+  background: linear-gradient(135deg, #32cd32, #228b22);
+  color: white;
+}
+
+.mintButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.mintButton:disabled {
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mintButton:disabled::before {
+  display: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  background: rgba(231, 76, 60, 0.9);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.walletInfo {
+  margin-top: 40px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.walletInfo p {
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mintPage {
+    padding: 15px;
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 30px 15px;
+  }
+
+  .title {
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    margin-bottom: 30px;
+  }
+
+  .mintInfo {
+    margin-bottom: 40px;
+  }
+
+  .mintButton {
+    padding: 18px 30px;
+    min-width: 250px;
+    min-height: 60px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .walletInfo {
+    margin-top: 30px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mintButton {
+    min-width: 220px;
+    padding: 16px 25px;
+    font-size: 1rem;
+  }
+
+  .title {
+    letter-spacing: 1px;
+  }
+
+  .currentPet span {
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Animation for smooth transitions */
+.mintButton,
+.title,
+.currentPet span {
+  transition: all 0.8s ease-in-out;
+}
+
+/* Loading state enhancements */
+.mintButton:disabled .spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Hover effects for interactive elements */
+.walletInfo {
+  transition: all 0.3s ease;
+}
+
+.walletInfo:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}

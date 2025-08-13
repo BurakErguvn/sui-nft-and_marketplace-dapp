@@ -22,6 +22,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 100px; /* Header yüksekliği için alan bırak */
 }
 
 * {
@@ -39,4 +40,42 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Connect Wallet Button font override - More specific selectors */
+/* Mysten Sui Wallet Kit selectors */
+button[role="button"],
+button[type="button"],
+.sui-connect-button,
+[class*="connect-wallet"],
+[class*="ConnectWallet"],
+[class*="wallet-button"],
+[class*="WalletButton"],
+div[class*="dapp-kit"] button,
+div[class*="sui"] button,
+.dapp-kit-button,
+/* Generic wallet button selectors */
+[data-testid="connect-wallet-button"],
+[data-testid="wallet-button"],
+.wallet-adapter-button,
+button[class*="wallet"],
+button[class*="connect"],
+button[class*="Wallet"],
+button[class*="Connect"],
+/* Sui Wallet Kit button styles */
+div[class*="sui-wallet"] button,
+div[class*="wallet-kit"] button,
+[class*="ConnectButton"] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* More aggressive override using universal selector */
+body [class*="onnect"] button,
+body button[class*="onnect"],
+body [class*="allet"] button,
+body button[class*="allet"] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
 }
